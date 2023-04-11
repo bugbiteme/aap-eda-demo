@@ -9,7 +9,9 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 pip install ansible-rulebook
 
-ansible-galaxy collection install ansible.eda 
+ansible-galaxy collection install ansible.eda  
+
+For fix-web example you need to have httpd installed on a host, and update /etc/hosts with an ip address for `webhost`  
 
 ## Webhook example
 on terminal 1  
