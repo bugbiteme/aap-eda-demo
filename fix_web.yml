@@ -10,9 +10,8 @@
 
     - name: Replace website
       copy:
-       remote_src: yes
-       src: /tmp/index.html
-       dest: /var/www/html/
-       owner: apache
-       group: apache
-       mode: '0644'
+        content: "Hello from {{ ansible_distribution }} {{ ansible_distribution_version }}"
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0644'
