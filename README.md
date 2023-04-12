@@ -29,7 +29,7 @@ look at results on terminal 1
 
 ## URL Check example
 on terminal 1  
-`ansible-rulebook --rulebook url-check-example.yml -i inventory_web.yml --print-events`  
+`ansible-rulebook --rulebook url-check.yml -i inventory_web.yml --print-events`  
 
 on terminal 2
 `curl webserver`  
