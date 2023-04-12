@@ -23,5 +23,5 @@
       action:
         run_playbook:
           name: fix_web.yml
-            vars:
+          extra_vars:
               ssh_private_key: "{{ lookup('file', '../ec2-rhel-key.pem') }}"
