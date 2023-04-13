@@ -19,6 +19,9 @@
       condition: event.payload.event_type == "drift-baseline-detected"
 
       action:
+        run_playbook:
+        name: remediate-drift.yml
+
         debug:
           msg: "!!!!!!!!!!!!!!!!System Drift Detected"
 
