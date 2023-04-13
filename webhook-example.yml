@@ -21,3 +21,10 @@
       action:
         debug:
           msg: "Received: {{ event.payload }}"
+
+    - name: Check for configuration drift
+      condition: event.payload.application == "drift"
+
+      action:
+        debug:
+          msg: "System Drift Detected"

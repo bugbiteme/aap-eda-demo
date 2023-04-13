@@ -18,7 +18,7 @@ on terminal 1
 `ansible-rulebook --rulebook webhook-example.yml -i inventory.yml --print-events`  
 
 on terminal 2  
-`curl -H 'Content-Type: application/json' -d "{\"message\": \"Ansible is alright\"}" 127.0.0.1:5000/endpointint`  
+`curl -H 'Content-Type: application/json' -d "{\"message\": \"Ansible is alright\"}" 127.0.0.1:5000/endpoint`  
 
 look at results on terminal 1  
 
