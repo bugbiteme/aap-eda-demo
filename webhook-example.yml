@@ -15,6 +15,13 @@
         run_playbook:
           name: say-what.yml
 
+    - name: Check for configuration drift
+      condition: event.event_type == "drift-baseline-detected"
+
+      action:
+        debug:
+          msg: "!!!!!!!!!!!!!!!!System Drift Detected"
+          
     - name: Handle Red Hat Insights event
       condition: event.payload is defined
 
@@ -22,9 +29,3 @@
         debug:
           msg: "Received: {{ event.payload }}"
 
-    - name: Check for configuration drift
-      condition: event.event_type == "drift-baseline-detected"
-
-      action:
-        debug:
-          msg: "!!!!!!!!!!!!!!!!System Drift Detected"
