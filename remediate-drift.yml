@@ -1,7 +1,7 @@
 ---
-- name: say thanks
+- name: Remediation Playbook - Restore Baseline
   hosts: localhost
   gather_facts: false
   tasks:
     - debug:
-        msg: "Running Remediation Tasks for {{ event.payload.source | default('System') }}!"
+        msg: "Running Remediation Tasks for System!"
