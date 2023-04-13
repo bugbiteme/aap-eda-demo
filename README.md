@@ -27,30 +27,40 @@ on terminal 2
 
 look at results on terminal 1
 
-## URL Check example
+## Confuguration Drift Example (webhook)
 on terminal 1  
-`ansible-rulebook --rulebook url-check.yml -i inventory_web.yml --print-events`  
+`ansible-rulebook --rulebook webhook-example.yml -i inventory.yml --print-events`  
 
-on terminal 2
-`curl webserver`  
+on terminal 2 (to test)
+`curl -H 'Content-Type: application/json' -d "{\"event_type\": \"drift-baseline-detected\"}" 127.0.0.1:5000/endpoint`  
+(or public URL from outside)  
 
 output should be:  
 
 ```
-<!DOCTYPE html>
-<html>
-<body>
+{   'meta': {   'endpoint': 'endpoint',
+                'headers': {   'Accept': '*/*',
+                               'Content-Length': '41',
+                               'Content-Type': 'application/json',
+                               'Host': 'aap.leonlevy.net:5000',
+                               'User-Agent': 'curl/7.87.0'}},
+    'payload': {'event_type': 'drift-baseline-detected'}}
 
-<h1>Sample Page for EDA</h1>
-<p>This is a basic page - WOOO HOOOOO!</p>
+PLAY [Remediation Playbook - Restore Baseline] *********************************
 
-</body>
-</html>
+TASK [debug] *******************************************************************
+ok: [localhost] => {
+    "msg": "Running Remediation Tasks for System!"
+}
 ```    
-on webserver  
 
-`sudo rm /var/www/html/index.html` 
+To test webhook with insights, set up basline config drift monitoring and set up webhook integrations
 
+Using Red Hat Insights as a source of events for Event-Driven Ansible automation  
+https://www.ansible.com/blog/using-red-hat-insights-as-a-source-of-events-for-event-driven-ansible-automation  
+
+Introducing Red Hat Insights Drift Capability for Red Hat Enterprise Linux configuration troubleshooting
+https://www.redhat.com/en/blog/introducing-red-hat-insights-drift-capability-red-hat-enterprise-linux-configuration-troubleshooting
 
 
 
