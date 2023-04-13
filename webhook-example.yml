@@ -20,7 +20,7 @@
 
       action:
         run_playbook:
-        name: remediate-drift.yml
+          name: remediate-drift.yml
 
         debug:
           msg: "!!!!!!!!!!!!!!!!System Drift Detected"
