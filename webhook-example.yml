@@ -22,9 +22,6 @@
         run_playbook:
           name: remediate-drift.yml
 
-        debug:
-          msg: "!!!!!!!!!!!!!!!!System Drift Detected"
-
     - name: Handle Red Hat Insights event
       condition: event.payload is defined
 
