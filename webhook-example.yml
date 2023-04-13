@@ -23,7 +23,7 @@
           msg: "Received: {{ event.payload }}"
 
     - name: Check for configuration drift
-      condition: event.payload.event_type == "drift-baseline-detected"
+      condition: event.event_type == "drift-baseline-detected"
 
       action:
         debug:
