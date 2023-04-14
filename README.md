@@ -26,7 +26,7 @@ on terminal 2
 
 look at results on terminal 1
 
-## Confuguration Drift Example (webhook)
+## Configuration Drift Example (webhook)
 on terminal 1  
 `ansible-rulebook --rulebook webhook-example.yml -i inventory.yml --print-events`  
 
