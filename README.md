@@ -1,17 +1,16 @@
 # aap-eda-demo
 Ansible Demonstration of Event Driven Automation
 
-Prereqs
+Prereqs:
 
-dnf --assumeyes install java-17-openjdk python3-pip
+`dnf --assumeyes install java-17-openjdk python3-pip`  
 
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+`export JAVA_HOME=/usr/lib/jvm/java-17-openjdk`  
 
-pip install ansible-rulebook
+`pip install ansible-rulebook`  
 
-ansible-galaxy collection install ansible.eda  
+`ansible-galaxy collection install ansible.eda`  
 
-For fix-web example you need to have httpd installed on a host, and update /etc/hosts with an ip address for `webserver`  
 
 ## Webhook example
 on terminal 1  
@@ -63,6 +62,7 @@ Introducing Red Hat Insights Drift Capability for Red Hat Enterprise Linux confi
 https://www.redhat.com/en/blog/introducing-red-hat-insights-drift-capability-red-hat-enterprise-linux-configuration-troubleshooting
 
 
+Trigger event on managed RHEL system by issuing the following command on it:
 
 
-
+`sudo insights-client`
